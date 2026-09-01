@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Góc ăn vặt của Kyu</title>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cellipse cx='20' cy='22' rx='16' ry='14' fill='%2393A87E' stroke='%23242018' stroke-width='2'/%3E%3Ccircle cx='14' cy='20' r='2.2' fill='%23242018'/%3E%3Ccircle cx='26' cy='20' r='2.2' fill='%23242018'/%3E%3Cpath d='M14 27c3 3 9 3 12 0' stroke='%23242018' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Work+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #EFF3E1;
+            --paper: #FFFDF6;
+            --ink: #242018;
+            --ink-soft: #5b5646;
+            --red: #E8604C;
+            --mustard: #F4B942;
+            --egg: #93A87E;
+            --egg-dark: #5F7350;
+            --egg-light: #C3D2AC;
+            --plum: #6B4A73;
+            --line: #242018;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: 'Work Sans', sans-serif;
+            line-height: 1.5;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Baloo 2', sans-serif;
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        img,
+        svg {
+            display: block;
+            max-width: 100%;
+        }
+
+        .wrap {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ---------- NAV ---------- */
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 24px;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        .nav-brand {
+            font-family: 'Baloo 2', sans-serif;
+            font-weight: 800;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-brand svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .nav-links a {
+            color: var(--ink);
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 2px;
+        }
+
+        .nav-links a:hover {
+            border-color: var(--red);
+        }
+
+        /* ---------- HERO ---------- */
+        .hero {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 20px 24px 60px;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 64px);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .hero h1 .line2 {
+            color: var(--red);
+        }
+
+        .hero p {
+            max-width: 44ch;
+            font-size: 17px;
+            color: var(--ink-soft);
+            margin-top: 14px;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 10px;
+            margin-top: 22px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            text-decoration: none;
+            cursor: pointer;
+            background: var(--paper);
+            border: 2px solid var(--line);
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 13px;
+            box-shadow: 3px 3px 0 var(--line);
+            color: var(--ink);
+            display: inline-block;
+            transition: transform .12s ease;
+        }
+
+        a.badge:hover {
+            transform: translate(-2px, -2px);
+            background: var(--mustard);
+        }
+
+        .hero-art {
+            position: relative;
+        }
+
+        .hero-art svg {
+            width: 100%;
+            height: auto;
+        }
+
+        /* ---------- SECTION HEADERS ---------- */
+        section {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 44px 24px;
+        }
+
+        .sec-head {
+            display: flex;
+            align-items: baseline;
+            gap: 14px;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+        }
+
+        .sec-head h2 {
+            font-size: clamp(26px, 4vw, 36px);
+        }
+
+        .sec-head .count {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--ink-soft);
+            background: var(--paper);
+            border: 2px solid var(--line);
+            border-radius: 999px;
+            padding: 3px 12px;
+        }
+
+        .sec-sub {
+            color: var(--ink-soft);
+            font-size: 15px;
+            margin-top: -16px;
+            margin-bottom: 28px;
+            max-width: 56ch;
+        }
+
+        /* ---------- SNACK GRID ---------- */
+        .snack-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .snack-card {
+            background: var(--paper);
+            border: 2px solid var(--line);
+            border-radius: 20px;
+            padding: 22px;
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            box-shadow: 5px 5px 0 var(--line);
+            transition: transform .15s ease;
+        }
+
+        .snack-card:hover {
+            transform: translate(-2px, -2px);
+        }
+
+        .snack-art {
+            flex: 0 0 96px;
+            width: 96px;
+            height: 120px;
+        }
+
+        .snack-info h3 {
+            font-size: 19px;
+            font-weight: 700;
+        }
+
+        .snack-info .tag {
+            display: inline-block;
+            margin-top: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 999px;
+            color: #fff;
+        }
+
+        .snack-info p {
+            margin: 10px 0 0;
+            font-size: 14px;
+            color: var(--ink-soft);
+        }
+
+        /* ---------- DRINKS ---------- */
+        .drink-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .drink-card {
+            background: var(--paper);
+            border: 2px solid var(--line);
+            border-radius: 20px;
+            padding: 26px 22px;
+            text-align: center;
+            box-shadow: 5px 5px 0 var(--line);
+        }
+
+        .drink-card svg {
+            margin: 0 auto 14px;
+            height: 150px;
+            width: auto;
+        }
+
+        .drink-card h3 {
+            font-size: 18px;
+        }
+
+        .drink-card p {
+            color: var(--ink-soft);
+            font-size: 13.5px;
+            margin-top: 6px;
+        }
+
+        /* ---------- STICKERS ---------- */
+        .sticker-band {
+            background: var(--egg-light);
+            border-top: 2px solid var(--line);
+            border-bottom: 2px solid var(--line);
+        }
+
+        .sticker-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 6px;
+        }
+
+        .sticker {
+            background: var(--paper);
+            border: 2px solid var(--line);
+            border-radius: 18px;
+            padding: 14px 10px 12px;
+            text-align: center;
+            box-shadow: 4px 4px 0 var(--line);
+        }
+
+        .sticker svg {
+            width: 100%;
+            height: auto;
+            max-width: 150px;
+            margin: 0 auto;
+        }
+
+        .sticker span {
+            display: block;
+            margin-top: 8px;
+            font-weight: 700;
+            font-size: 13.5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 36px 24px 46px;
+            color: var(--ink-soft);
+            font-size: 13.5px;
+        }
+
+        footer b {
+            color: var(--ink);
+        }
+
+        footer .copy {
+            margin-top: 10px;
+            font-size: 12px;
+            opacity: 0.75;
+        }
+
+        footer .copy a {
+            color: inherit;
+            text-decoration: underline;
+            text-decoration-color: var(--red);
+            text-underline-offset: 2px;
+            font-weight: 600;
+        }
+
+        footer .copy a:hover {
+            color: var(--red);
+        }
+
+        @media (max-width:760px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-art {
+                order: -1;
+                max-width: 260px;
+                margin: 0 auto;
+            }
+
+            .snack-grid,
+            .drink-grid,
+            .sticker-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .snack-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width:480px) {
+            .sticker-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="nav">
+        <div class="nav-brand">
+            <svg viewBox="0 0 40 40">
+                <ellipse cx="20" cy="22" rx="16" ry="14" fill="#93A87E" stroke="#242018" stroke-width="2" />
+                <circle cx="14" cy="20" r="2.2" fill="#242018" />
+                <circle cx="26" cy="20" r="2.2" fill="#242018" />
+                <path d="M14 27c3 3 9 3 12 0" stroke="#242018" stroke-width="2" fill="none" stroke-linecap="round" />
+            </svg>
+            kyu.snacks
+        </div>
+        <div class="nav-links">
+            <a href="#banh">Bánh</a>
+            <a href="#nuoc">Nước uống</a>
+            <a href="#sticker">Sticker</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-copy">
+            <h1>Góc ăn vặt<br><span class="line2">của Kyu.</span></h1>
+            <p>Danh sách mấy món snack Kyu ghiền nhất, để lần sau đi siêu thị khỏi đứng tần ngần không biết mua gì. Có
+                bánh, có nước, có cả tình yêu của Kyu dành cho bánh.</p>
+            <div class="hero-badges">
+                <a href="#banh" class="badge">4 loại bánh</a>
+                <a href="#nuoc" class="badge">2 loại nước</a>
+                <span class="badge">100% mood ăn vặt</span>
+            </div>
+        </div>
+        <div class="hero-art">
+            <svg viewBox="0 0 320 300" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="160" cy="230" rx="120" ry="16" fill="#5F7350" opacity="0.18" />
+                <path
+                    d="M60 190 Q40 120 90 80 Q130 45 190 55 Q250 65 260 130 Q268 190 210 215 Q140 240 90 220 Q65 210 60 190Z"
+                    fill="#93A87E" stroke="#242018" stroke-width="3" />
+                <ellipse cx="115" cy="118" rx="6.5" ry="8" fill="#242018" />
+                <ellipse cx="175" cy="112" rx="6.5" ry="8" fill="#242018" />
+                <circle cx="102" cy="140" r="9" fill="#E8604C" opacity="0.35" />
+                <circle cx="195" cy="134" r="9" fill="#E8604C" opacity="0.35" />
+                <path d="M110 152 Q145 178 182 148" stroke="#242018" stroke-width="3" fill="none"
+                    stroke-linecap="round" />
+                <path d="M55 175 Q35 165 30 145" stroke="#242018" stroke-width="4" fill="none" stroke-linecap="round" />
+                <path d="M250 165 Q272 178 262 200" stroke="#242018" stroke-width="4" fill="none"
+                    stroke-linecap="round" />
+                <!-- snack stick held in hand -->
+                <rect x="245" y="150" width="10" height="60" rx="4" fill="#F4B942" stroke="#242018" stroke-width="2.5"
+                    transform="rotate(25 250 180)" />
+            </svg>
+        </div>
+    </div>
+
+    <section id="banh">
+        <div class="sec-head">
+            <h2>Bánh ruột</h2>
+            <span class="count">4 món</span>
+        </div>
+        <p class="sec-sub">Mấy gói này mà hết trong tủ là Kyu report liền, mua dự trữ nhiều vào.</p>
+
+        <div class="snack-grid">
+
+            <div class="snack-card">
+                <svg class="snack-art" viewBox="0 0 130 90">
+                    <rect x="6" y="14" width="118" height="66" rx="12" fill="#F7C948" stroke="#242018"
+                        stroke-width="3" />
+                    <path d="M6 14 L46 14 L18 40 L6 26Z" fill="#E8604C" stroke="#242018" stroke-width="2"
+                        stroke-linejoin="round" />
+                    <text x="16" y="27" font-family="Baloo 2" font-weight="700" font-size="6" fill="#fff"
+                        transform="rotate(-45 16 27)">Richeese</text>
+                    <text x="88" y="40" text-anchor="middle" font-family="Baloo 2" font-style="italic" font-weight="800"
+                        font-size="17" fill="#E8604C">nabati</text>
+                    <text x="88" y="49" text-anchor="middle" font-family="Work Sans" font-weight="700" font-size="6"
+                        fill="#6B4A73">WAFER</text>
+                    <rect x="52" y="55" width="62" height="18" rx="4" fill="#F4E1A8" stroke="#242018"
+                        stroke-width="2" />
+                    <line x1="52" y1="61" x2="114" y2="61" stroke="#C98A2B" stroke-width="2" />
+                    <line x1="52" y1="67" x2="114" y2="67" stroke="#C98A2B" stroke-width="2" />
+                </svg>
+                <div class="snack-info">
+                    <h3>Nabati Richeese</h3>
+                    <span class="tag" style="background:var(--red);">phô mai</span>
+                    <p>Cây bánh phủ phô mai, giòn tan, ăn một cây là muốn bóc gói thứ hai luôn.</p>
+                </div>
+            </div>
+
+            <div class="snack-card">
+                <svg class="snack-art" viewBox="0 0 130 90">
+                    <rect x="6" y="14" width="118" height="66" rx="12" fill="#4A2F27" stroke="#242018"
+                        stroke-width="3" />
+                    <path d="M6 14 L46 14 L18 40 L6 26Z" fill="#E8604C" stroke="#242018" stroke-width="2"
+                        stroke-linejoin="round" />
+                    <text x="16" y="27" font-family="Baloo 2" font-weight="700" font-size="6" fill="#fff"
+                        transform="rotate(-45 16 27)">Richeese</text>
+                    <text x="88" y="40" text-anchor="middle" font-family="Baloo 2" font-style="italic" font-weight="800"
+                        font-size="17" fill="#F4B942">nabati</text>
+                    <text x="88" y="49" text-anchor="middle" font-family="Work Sans" font-weight="700" font-size="6"
+                        fill="#E8B7A0">CHOCOLATE</text>
+                    <rect x="52" y="55" width="62" height="18" rx="4" fill="#6B4632" stroke="#242018"
+                        stroke-width="2" />
+                    <line x1="52" y1="61" x2="114" y2="61" stroke="#2E1B14" stroke-width="2" />
+                    <line x1="52" y1="67" x2="114" y2="67" stroke="#2E1B14" stroke-width="2" />
+                </svg>
+                <div class="snack-info">
+                    <h3>Nabati Sô-cô-la</h3>
+                    <span class="tag" style="background:var(--plum);">sô cô la</span>
+                    <p>Bản socola của dòng nabati, ngọt dịu chứ không gắt, hợp uống kèm trà đá.</p>
+                </div>
+            </div>
+
+            <div class="snack-card">
+                <svg class="snack-art" viewBox="0 0 100 130">
+                    <path d="M25 15 Q20 10 30 8 L70 8 Q80 10 75 15 L82 110 Q82 122 70 122 L30 122 Q18 122 18 110 Z"
+                        fill="#F5A93B" stroke="#242018" stroke-width="3" />
+                    <circle cx="50" cy="28" r="14" fill="#E8604C" stroke="#242018" stroke-width="2" />
+                    <text x="50" y="26" text-anchor="middle" font-family="Baloo 2" font-weight="800" font-size="7"
+                        fill="#fff">One</text>
+                    <text x="50" y="34" text-anchor="middle" font-family="Baloo 2" font-weight="800" font-size="7"
+                        fill="#fff">One</text>
+                    <circle cx="42" cy="65" r="12" fill="#E8C48A" stroke="#242018" stroke-width="1.5" />
+                    <circle cx="58" cy="72" r="12" fill="#E8C48A" stroke="#242018" stroke-width="1.5" />
+                    <circle cx="50" cy="55" r="12" fill="#E8C48A" stroke="#242018" stroke-width="1.5" />
+                    <text x="50" y="100" text-anchor="middle" font-family="Baloo 2" font-weight="700" font-size="7.5"
+                        fill="#7A3C0E">PHÔ MAI</text>
+                    <text x="50" y="110" text-anchor="middle" font-family="Baloo 2" font-weight="700" font-size="7.5"
+                        fill="#7A3C0E">NGÔ</text>
+                </svg>
+                <div class="snack-info">
+                    <h3>Bánh gạo One One phô mai ngô</h3>
+                    <span class="tag" style="background:var(--mustard);color:#242018;">phô mai ngô</span>
+                    <p>Bánh gạo tròn giòn rụm, phủ vị phô mai ngô beo béo, ăn từng miếng nhỏ mà ghiền.</p>
+                </div>
+            </div>
+
+            <div class="snack-card">
+                <svg class="snack-art" viewBox="0 0 100 130">
+                    <path d="M25 15 Q20 10 30 8 L70 8 Q80 10 75 15 L82 110 Q82 122 70 122 L30 122 Q18 122 18 110 Z"
+                        fill="#6FA050" stroke="#242018" stroke-width="3" />
+                    <circle cx="50" cy="28" r="14" fill="#E8604C" stroke="#242018" stroke-width="2" />
+                    <text x="50" y="26" text-anchor="middle" font-family="Baloo 2" font-weight="800" font-size="7"
+                        fill="#fff">One</text>
+                    <text x="50" y="34" text-anchor="middle" font-family="Baloo 2" font-weight="800" font-size="7"
+                        fill="#fff">One</text>
+                    <circle cx="42" cy="65" r="12" fill="#F3E3B8" stroke="#242018" stroke-width="1.5" />
+                    <circle cx="58" cy="72" r="12" fill="#F3E3B8" stroke="#242018" stroke-width="1.5" />
+                    <circle cx="50" cy="55" r="12" fill="#F3E3B8" stroke="#242018" stroke-width="1.5" />
+                    <text x="50" y="100" text-anchor="middle" font-family="Baloo 2" font-weight="700" font-size="7.5"
+                        fill="#fff">NGUYÊN</text>
+                    <text x="50" y="110" text-anchor="middle" font-family="Baloo 2" font-weight="700" font-size="7.5"
+                        fill="#fff">BẢN</text>
+                </svg>
+                <div class="snack-info">
+                    <h3>Bánh gạo One One nguyên bản</h3>
+                    <span class="tag" style="background:var(--egg-dark);">vị gốc</span>
+                    <p>Vị truyền thống, mặn nhẹ thanh thanh, ăn hoài không chán, hợp mọi lúc mọi nơi.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="nuoc">
+        <div class="sec-head">
+            <h2>Nước uống</h2>
+            <span class="count">2 món</span>
+        </div>
+        <p class="sec-sub">Ưu tiên bản zero calo hết, ăn bánh xong làm lon nước cho đỡ áy náy.</p>
+
+        <div class="drink-grid">
+
+            <div class="drink-card">
+                <svg viewBox="0 0 90 160">
+                    <rect x="18" y="10" width="54" height="140" rx="22" fill="#E30613" stroke="#242018"
+                        stroke-width="2" />
+                    <ellipse cx="45" cy="16" rx="27" ry="7" fill="#B00510" />
+                    <ellipse cx="45" cy="144" rx="27" ry="7" fill="#B00510" />
+                    <rect x="18" y="58" width="54" height="40" fill="#fff" />
+                    <text x="45" y="76" text-anchor="middle" font-family="Georgia, serif" font-style="italic"
+                        font-weight="700" font-size="11" fill="#E30613" textLength="42"
+                        lengthAdjust="spacingAndGlyphs">Coca-Cola</text>
+                    <rect x="23" y="82" width="44" height="11" rx="5.5" fill="#242018" />
+                    <text x="45" y="90.5" text-anchor="middle" font-family="Work Sans" font-weight="700" font-size="6"
+                        fill="#fff" textLength="36" lengthAdjust="spacingAndGlyphs">ZERO SUGAR</text>
+                    <text x="45" y="113" text-anchor="middle" font-family="Work Sans" font-weight="700" font-size="6.5"
+                        fill="#fff" textLength="40" lengthAdjust="spacingAndGlyphs">KHÔNG ĐƯỜNG</text>
+                </svg>
+                <h3>Coca-Cola không calo</h3>
+                <p>Ga đã, ngọt vừa, không đường - kèm bánh phô mai là hợp bài.</p>
+            </div>
+
+            <div class="drink-card">
+                <svg viewBox="0 0 90 160">
+                    <rect x="18" y="10" width="54" height="140" rx="22" fill="#0a0a0a" stroke="#242018"
+                        stroke-width="2" />
+                    <ellipse cx="45" cy="16" rx="27" ry="7" fill="#000" />
+                    <ellipse cx="45" cy="144" rx="27" ry="7" fill="#000" />
+                    <circle cx="27" cy="32" r="5" fill="#3CB043" opacity="0.85" />
+                    <circle cx="64" cy="40" r="6" fill="#3CB043" opacity="0.7" />
+                    <circle cx="63" cy="132" r="5" fill="#3CB043" opacity="0.75" />
+                    <circle cx="27" cy="128" r="4.5" fill="#3CB043" opacity="0.7" />
+                    <circle cx="45" cy="58" r="17" fill="#fff" />
+                    <path d="M28 58 A17 17 0 0 1 62 58 Z" fill="#E32934" />
+                    <path d="M28 58 A17 17 0 0 0 62 58 Z" fill="#003087" />
+                    <path d="M27 58 Q45 51 63 58 Q45 65 27 58Z" fill="#fff" />
+                    <text x="45" y="88" text-anchor="middle" font-family="Georgia, serif" font-style="italic"
+                        font-weight="700" font-size="10" fill="#fff" textLength="30"
+                        lengthAdjust="spacingAndGlyphs">pepsi</text>
+                    <text x="45" y="115" text-anchor="middle" font-family="Work Sans" font-weight="700" font-size="6.5"
+                        fill="#fff" textLength="42" lengthAdjust="spacingAndGlyphs">KHÔNG ĐƯỜNG</text>
+                    <text x="45" y="126" text-anchor="middle" font-family="Work Sans" font-weight="700" font-size="7.5"
+                        fill="#3CB043" textLength="34" lengthAdjust="spacingAndGlyphs">VỊ CHANH</text>
+                </svg>
+                <h3>Pepsi không calo vị chanh</h3>
+                <p>Vị chanh the nhẹ, uống lạnh buốt họng, giải ngấy cực đỉnh.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="sticker-band">
+        <section id="sticker">
+            <div class="sec-head">
+                <h2>Sticker trứng bắc thảo</h2>
+                <span class="count">6 em</span>
+            </div>
+            <p class="sec-sub">Đội bảo vệ chính thức của tủ bánh Kyu, đứa nào rớ vào phải qua mặt mấy em này trước.</p>
+
+            <div class="sticker-grid">
+
+                <div class="sticker">
+                    <svg viewBox="0 0 140 130">
+                        <path d="M25 85 Q10 45 45 25 Q75 5 105 25 Q130 45 115 85 Q100 115 70 118 Q40 115 25 85Z"
+                            fill="#93A87E" stroke="#242018" stroke-width="3" />
+                        <circle cx="52" cy="60" r="4" fill="#242018" />
+                        <circle cx="84" cy="60" r="4" fill="#242018" />
+                        <circle cx="46" cy="72" r="7" fill="#E8604C" opacity="0.4" />
+                        <circle cx="90" cy="72" r="7" fill="#E8604C" opacity="0.4" />
+                        <path d="M52 82 Q70 100 88 82" stroke="#242018" stroke-width="3" fill="none"
+                            stroke-linecap="round" />
+                    </svg>
+                    <span>khoái chí</span>
+                </div>
+
+                <div class="sticker">
+                    <svg viewBox="0 0 140 130">
+                        <path d="M25 85 Q10 45 45 25 Q75 5 105 25 Q130 45 115 85 Q100 115 70 118 Q40 115 25 85Z"
+                            fill="#93A87E" stroke="#242018" stroke-width="3" />
+                        <path d="M46 57 Q52 50 58 57" stroke="#242018" stroke-width="3" fill="none"
+                            stroke-linecap="round" />
+                        <path d="M78 57 Q84 50 90 57" stroke="#242018" stroke-width="3" fill="none"
+                            stroke-linecap="round" />
+                        <circle cx="42" cy="78" r="9" fill="#E8604C" opacity="0.55" />
+                        <circle cx="94" cy="78" r="9" fill="#E8604C" opacity="0.55" />
+                        <ellipse cx="68" cy="88" rx="6" ry="4" fill="#242018" />
+                    </svg>
+                    <span>mắc cỡ</span>
+                </div>
+
+                <div class="sticker">
+                    <svg viewBox="0 0 140 130">
+                        <path d="M25 85 Q10 45 45 25 Q75 5 105 25 Q130 45 115 85 Q100 115 70 118 Q40 115 25 85Z"
+                            fill="#93A87E" stroke="#242018" stroke-width="3" />
+                        <path d="M45 55l7 7-7 7M59 55l-7 7 7 7" stroke="#242018" stroke-width="3"
+                            stroke-linecap="round" />
+                        <path d="M77 55l7 7-7 7M91 55l-7 7 7 7" stroke="#242018" stroke-width="3"
+                            stroke-linecap="round" />
+                        <path d="M55 85 Q70 78 85 85" stroke="#242018" stroke-width="3" fill="none"
+                            stroke-linecap="round" />
+                        <path d="M100 30l4 8 8 2-8 3-3 8-3-8-8-3 8-2z" fill="#F4B942" />
+                    </svg>
+                    <span>lấp lánh</span>
+                </div>
+
+                <div class="sticker">
+                    <svg viewBox="0 0 140 130">
+                        <ellipse cx="70" cy="65" rx="52" ry="40" fill="#93A87E" stroke="#242018" stroke-width="3"
+                            transform="rotate(-8 70 65)" />
+                        <circle cx="55" cy="55" r="4" fill="#242018" />
+                        <circle cx="85" cy="58" r="4" fill="#242018" />
+                        <path d="M60 78 Q75 85 90 76" stroke="#242018" stroke-width="3" fill="none"
+                            stroke-linecap="round" />
+                        <path d="M18 60 l-14 -6M16 70 l-15 2M20 50 l-13 -12" stroke="#242018" stroke-width="3"
+                            stroke-linecap="round" />
+                    </svg>
+                    <span>chạy trốn</span>
+                </div>
+
+                <div class="sticker">
+                    <svg viewBox="0 0 140 130">
+                        <path d="M25 85 Q10 45 45 25 Q75 5 105 25 Q130 45 115 85 Q100 115 70 118 Q40 115 25 85Z"
+                            fill="#93A87E" stroke="#242018" stroke-width="3" />
+                        <path d="M46 62 Q52 58 58 62" stroke="#242018" stroke-width="3" fill="none"
+                            stroke-linecap="round" />
+                        <path d="M78 62 Q84 58 90 62" stroke="#242018" stroke-width="3" fill="none"
+                            stroke-linecap="round" />
+                        <ellipse cx="68" cy="88" rx="10" ry="5" fill="#242018" />
+                        <text x="100" y="35" font-family="Baloo 2" font-weight="700" font-size="16" fill="#6B4A73">z
+                            Z</text>
+                    </svg>
+                    <span>ngủ gật</span>
+                </div>
+
+                <div class="sticker">
+                    <svg viewBox="0 0 140 130">
+                        <path d="M25 85 Q10 45 45 25 Q75 5 105 25 Q130 45 115 85 Q100 115 70 118 Q40 115 25 85Z"
+                            fill="#93A87E" stroke="#242018" stroke-width="3" />
+                        <path d="M45 58 Q51 52 57 58" stroke="#242018" stroke-width="3" fill="none"
+                            stroke-linecap="round" />
+                        <path d="M78 58l12 -3" stroke="#242018" stroke-width="3" stroke-linecap="round" />
+                        <circle cx="90" cy="58" r="3.5" fill="#242018" />
+                        <path d="M55 82 Q70 92 88 80" stroke="#242018" stroke-width="3" fill="none"
+                            stroke-linecap="round" />
+                        <rect x="10" y="90" width="9" height="26" rx="3" fill="#F4B942" stroke="#242018"
+                            stroke-width="2" transform="rotate(20 15 100)" />
+                    </svg>
+                    <span>xí phần bánh</span>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        Làm cho <b>Kyu</b> để đỡ quên mình mê món gì. Đói bụng thì lướt lên coi lại danh sách nha.
+        <div class="copy">© 2026 Designed by <a href="https://github.com/nazhuldev" target="_blank" rel="noopener">Kyu
+                Dev</a></div>
+    </footer>
+
+</body>
+
+</html>
