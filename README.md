@@ -26,3 +26,14 @@ open index.html   # hoặc double-click vào file cũng được
 ```
 
 ## Cấu trúc
+
+├── index.html # toàn bộ trang, gồm cả CSS và SVG inline
+
+
+## Ghi chú
+
+Đây là project cá nhân làm cho vui, không liên kết hay đại diện chính thức cho các thương hiệu bánh/nước được nhắc tới.
+
+---
+
+Made by [Kyu Dev](https://github.com/nazhuldev)
