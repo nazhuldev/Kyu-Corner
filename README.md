@@ -6,7 +6,7 @@ Trang web nhỏ tổng hợp mấy món ăn vặt "signature" của Kyu, để l
 
 - **4 loại bánh**: Nabati Richeese, Nabati Sô-cô-la, bánh gạo One One phô mai ngô, bánh gạo One One nguyên bản
 - **2 loại nước**: Coca-Cola không calo, Pepsi không calo vị chanh
-- **6 sticker trứng bắc thảo**: mỗi em một biểu cảm riêng, đứng canh tủ bánh
+- **6 sticker tự vẽ**: mỗi em một biểu cảm riêng, đứng canh tủ bánh
 
 ## Công nghệ dùng
 
