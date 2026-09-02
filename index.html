@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Góc ăn vặt của Kyu</title>
+    <title>Góc nhỏ của Kyu</title>
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cellipse cx='20' cy='22' rx='16' ry='14' fill='%2393A87E' stroke='%23242018' stroke-width='2'/%3E%3Ccircle cx='14' cy='20' r='2.2' fill='%23242018'/%3E%3Ccircle cx='26' cy='20' r='2.2' fill='%23242018'/%3E%3Cpath d='M14 27c3 3 9 3 12 0' stroke='%23242018' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -287,6 +287,56 @@
             margin-top: 6px;
         }
 
+        /* ---------- GAMES ---------- */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .game-card {
+            background: var(--paper);
+            border: 2px solid var(--line);
+            border-radius: 20px;
+            padding: 22px;
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            box-shadow: 5px 5px 0 var(--line);
+            transition: transform .15s ease;
+        }
+
+        .game-card:hover {
+            transform: translate(-2px, -2px);
+        }
+
+        .game-art {
+            flex: 0 0 92px;
+            width: 92px;
+            height: 92px;
+        }
+
+        .game-info h3 {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .game-info .tag {
+            display: inline-block;
+            margin-top: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 999px;
+            color: #fff;
+        }
+
+        .game-info p {
+            margin: 10px 0 0;
+            font-size: 14px;
+            color: var(--ink-soft);
+        }
+
         /* ---------- STICKERS ---------- */
         .sticker-band {
             background: var(--egg-light);
@@ -366,11 +416,13 @@
 
             .snack-grid,
             .drink-grid,
+            .game-grid,
             .sticker-grid {
                 grid-template-columns: 1fr 1fr;
             }
 
-            .snack-card {
+            .snack-card,
+            .game-card {
                 flex-direction: column;
                 text-align: center;
             }
@@ -398,24 +450,26 @@
                 <circle cx="26" cy="20" r="2.2" fill="#242018" />
                 <path d="M14 27c3 3 9 3 12 0" stroke="#242018" stroke-width="2" fill="none" stroke-linecap="round" />
             </svg>
-            kyu.snacks
+            kyu.corner
         </div>
         <div class="nav-links">
             <a href="#banh">Bánh</a>
             <a href="#nuoc">Nước uống</a>
+            <a href="#game">Game</a>
             <a href="#sticker">Sticker</a>
         </div>
     </nav>
 
     <div class="hero">
         <div class="hero-copy">
-            <h1>Góc ăn vặt<br><span class="line2">của Kyu.</span></h1>
-            <p>Danh sách mấy món snack Kyu ghiền nhất, để lần sau đi siêu thị khỏi đứng tần ngần không biết mua gì. Có
-                bánh, có nước, có cả tình yêu của Kyu dành cho bánh.</p>
+            <h1>Góc nhỏ<br><span class="line2">của Kyu.</span></h1>
+            <p>Tổng hợp mấy thứ Kyu ghiền nhất: bánh ăn vặt lúc rảnh, nước uống giải ngấy, với mấy tựa game cày mỗi
+                ngày không chán. Đói bụng hay rảnh tay đều ghé được.</p>
             <div class="hero-badges">
                 <a href="#banh" class="badge">4 loại bánh</a>
                 <a href="#nuoc" class="badge">2 loại nước</a>
-                <span class="badge">100% mood ăn vặt</span>
+                <a href="#game" class="badge">4 tựa game</a>
+                <span class="badge">100% mood Kyu</span>
             </div>
         </div>
         <div class="hero-art">
@@ -606,10 +660,110 @@
         </div>
     </section>
 
+    <section id="game">
+        <div class="sec-head">
+            <h2>Game hay cày</h2>
+            <span class="count">4 tựa</span>
+        </div>
+        <p class="sec-sub">Rảnh là vô, không rảnh cũng ráng vô - mấy tựa này Kyu mở máy lên là auto full nạp.</p>
+
+        <div class="game-grid">
+
+            <div class="game-card">
+                <svg class="game-art" viewBox="0 0 120 120">
+                    <rect x="4" y="4" width="112" height="112" rx="26" fill="#5F7350" stroke="#242018"
+                        stroke-width="3" />
+                    <path d="M40 30 L38 18 M80 30 L82 18 M46 22 L44 14 M74 22 L76 14" stroke="#C3D2AC"
+                        stroke-width="2.5" stroke-linecap="round" />
+                    <path d="M33 58 Q30 32 60 30 Q90 32 87 58 L87 66 Q60 76 33 66 Z" fill="#8FA878" stroke="#242018"
+                        stroke-width="3" />
+                    <rect x="40" y="50" width="40" height="14" rx="6" fill="#242018" opacity="0.85" />
+                    <circle cx="52" cy="57" r="5" fill="#C3D2AC" />
+                    <circle cx="68" cy="57" r="5" fill="#C3D2AC" />
+                    <path d="M45 66 L40 88 L52 84 L60 96 L68 84 L80 88 L75 66 Z" fill="#3f4a30" stroke="#242018"
+                        stroke-width="2.5" stroke-linejoin="round" />
+                    <circle cx="60" cy="98" r="7" fill="none" stroke="#F4B942" stroke-width="2.5" />
+                    <path d="M60 92 L60 104 M54 98 L66 98" stroke="#F4B942" stroke-width="2" />
+                </svg>
+                <div class="game-info">
+                    <h3>PUBG Mobile</h3>
+                    <span class="tag" style="background:var(--egg-dark);">battle royale</span>
+                    <p>Rớt dù xong lượm đồ, mục tiêu cuối cùng luôn là top 1, gà không có thì buồn cả ngày.</p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <svg class="game-art" viewBox="0 0 120 120">
+                    <rect x="4" y="4" width="112" height="112" rx="26" fill="#6B4A73" stroke="#242018"
+                        stroke-width="3" />
+                    <path d="M38 34 L38 66 Q38 84 60 92 Q82 84 82 66 L82 34 Q60 42 38 34Z" fill="#8C6693"
+                        stroke="#242018" stroke-width="3" />
+                    <path d="M60 46 L67 60 L60 74 L53 60 Z" fill="#F4B942" stroke="#242018" stroke-width="2" />
+                    <path d="M30 82 L52 60 L58 66 L36 88 Z" fill="#E8C48A" stroke="#242018" stroke-width="2.5"
+                        stroke-linejoin="round" />
+                    <path d="M62 66 L84 44 L90 50 L68 72 Z" fill="#C3D2AC" stroke="#242018" stroke-width="2.5"
+                        stroke-linejoin="round" />
+                    <circle cx="28" cy="86" r="4" fill="#242018" />
+                    <circle cx="92" cy="48" r="4" fill="#242018" />
+                </svg>
+                <div class="game-info">
+                    <h3>Liên Quân Mobile</h3>
+                    <span class="tag" style="background:var(--plum);">MOBA</span>
+                    <p>Đi rừng, đẩy trụ, la làng đồng đội feed - drama muôn thuở nhưng vẫn cày đều.</p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <svg class="game-art" viewBox="0 0 120 120">
+                    <rect x="4" y="4" width="112" height="112" rx="26" fill="#242018" stroke="#242018"
+                        stroke-width="3" />
+                    <path d="M60 20 L60 34" stroke="#8a8a8a" stroke-width="3" stroke-linecap="round" />
+                    <circle cx="60" cy="18" r="3" fill="#8a8a8a" />
+                    <rect x="42" y="34" width="24" height="32" rx="8" fill="#B5B5B5" stroke="#000" stroke-width="2.5"
+                        transform="rotate(-6 54 50)" />
+                    <rect x="54" y="46" width="24" height="32" rx="8" fill="#E8604C" stroke="#000" stroke-width="2.5"
+                        transform="rotate(8 66 62)" />
+                    <text x="66" y="66" text-anchor="middle" font-family="Baloo 2" font-weight="800" font-size="10"
+                        fill="#fff" transform="rotate(8 66 62)">CoD</text>
+                    <circle cx="60" cy="94" r="9" fill="none" stroke="#F4B942" stroke-width="2.5" />
+                    <path d="M60 87 L60 101 M53 94 L67 94" stroke="#F4B942" stroke-width="2" />
+                </svg>
+                <div class="game-info">
+                    <h3>Call of Duty Mobile</h3>
+                    <span class="tag" style="background:#3a3a3a;">FPS</span>
+                    <p>Rush B, camp góc, hay clutch 1vs4 - tuỳ mood mà chọn lối chơi cho hợp bữa đó.</p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <svg class="game-art" viewBox="0 0 120 120">
+                    <rect x="4" y="4" width="112" height="112" rx="26" fill="#5A1E16" stroke="#242018"
+                        stroke-width="3" />
+                    <rect x="26" y="56" width="52" height="10" rx="3" fill="#3a3a3a" stroke="#242018"
+                        stroke-width="2" />
+                    <rect x="70" y="50" width="10" height="22" rx="2" fill="#3a3a3a" stroke="#242018"
+                        stroke-width="2" />
+                    <rect x="78" y="60" width="18" height="6" rx="2" fill="#3a3a3a" stroke="#242018" stroke-width="2" />
+                    <path d="M40 66 L36 78 L46 78 L44 66Z" fill="#8a8a8a" stroke="#242018" stroke-width="2" />
+                    <path d="M60 44l4.5 9.5 10.5 1.5-7.5 7.5 1.5 10.5L60 68l-9 5 1.5-10.5L45 55l10.5-1.5Z"
+                        fill="#F4B942" stroke="#242018" stroke-width="2" stroke-linejoin="round" />
+                    <text x="60" y="98" text-anchor="middle" font-family="Baloo 2" font-weight="800" font-size="12"
+                        fill="#F4B942">MW</text>
+                </svg>
+                <div class="game-info">
+                    <h3>Call of Duty: Modern Warfare</h3>
+                    <span class="tag" style="background:var(--red);">FPS PC/console</span>
+                    <p>Bản nặng đô hơn, đồ hoạ chân thật, hợp lúc muốn ngồi hẳn máy cày thay vì bấm màn hình.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <div class="sticker-band">
         <section id="sticker">
             <div class="sec-head">
-                <h2>Sticker trứng bắc thảo</h2>
+                <h2>Sticker tự vẽ hihi</h2>
                 <span class="count">6 em</span>
             </div>
             <p class="sec-sub">Đội bảo vệ chính thức của tủ bánh Kyu, đứa nào rớ vào phải qua mặt mấy em này trước.</p>
