@@ -12,7 +12,7 @@ Trang web nhỏ tổng hợp mấy món ăn vặt "signature" của Kyu, để l
 
 Chỉ HTML + CSS thuần + SVG vẽ tay, không framework, không dependency, không build step. Mở file lên là chạy.
 
-- Font: [Baloo 2](https://fonts.google.com/specimen/Baloo+2) (tiêu đề) + [Work Sans](https://fonts.google.com/specimen/Work+Sans) (nội dung), load qua Google Fonts
+- Font: [Baloo 2](https://nazhuldev.github.io+2) (tiêu đề) + [Work Sans](https://nazhuldev.github.io+Sans) (nội dung), load qua Google Fonts
 - Responsive: chạy tốt trên cả mobile lẫn desktop
 
 ## Chạy thử
@@ -20,7 +20,7 @@ Chỉ HTML + CSS thuần + SVG vẽ tay, không framework, không dependency, kh
 Clone repo về rồi mở thẳng file HTML bằng trình duyệt, không cần cài gì thêm:
 
 ```bash
-git clone https://github.com/nazhuldev/<ten-repo>.git
+git clone https://nazhuldev.github.io<ten-repo>.git
 cd <ten-repo>
 open index.html   # hoặc double-click vào file cũng được
 ```
@@ -36,4 +36,4 @@ open index.html   # hoặc double-click vào file cũng được
 
 ---
 
-Made by [Kyu Dev](https://github.com/nazhuldev)
+Made by [Kyu Dev](https://nazhuldev.github.io)
